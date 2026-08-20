@@ -153,10 +153,11 @@ img{max-width:100%;display:block}
 .hero::before{
   content:"";position:absolute;inset:0;z-index:-2;
   background:
-    radial-gradient(1000px 500px at 78% -8%,rgba(225,27,34,.30),transparent 60%),
-    linear-gradient(90deg,rgba(9,10,12,.96) 0%,rgba(9,10,12,.82) 46%,rgba(9,10,12,.58) 100%),
-    linear-gradient(180deg,rgba(9,10,12,.35),rgba(9,10,12,.9)),
-    url("../img/hero-socal.jpg") center 30%/cover no-repeat;
+    radial-gradient(1000px 500px at 80% -8%,rgba(225,27,34,.22),transparent 60%),
+    linear-gradient(90deg,rgba(9,10,12,.94) 0%,rgba(9,10,12,.7) 46%,rgba(9,10,12,.42) 100%),
+    linear-gradient(180deg,rgba(9,10,12,.25),rgba(9,10,12,.85)),
+    url("../img/tools-bg.svg") center/cover no-repeat,
+    var(--ink);
 }
 /* diagonal red slash motif from the brand */
 .hero::after{
@@ -225,6 +226,24 @@ img{max-width:100%;display:block}
 .split__media{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
 .split__media{background:#fff}
 .split__media img{width:100%;height:auto;display:block}
+/* live footage inset over the truck image */
+.media-video{
+  position:absolute;right:16px;bottom:16px;width:34%;max-width:190px;
+  aspect-ratio:9/16;border-radius:14px;overflow:hidden;
+  border:3px solid #fff;box-shadow:0 18px 44px -14px rgba(0,0,0,.7);
+  background:var(--ink);transform:rotate(2deg);transition:transform .3s ease;
+}
+.split__media:hover .media-video{transform:rotate(0)}
+.media-video video{width:100%;height:100%;object-fit:cover;display:block}
+.media-video__chip{
+  position:absolute;top:8px;left:8px;display:inline-flex;align-items:center;gap:.4rem;
+  background:rgba(12,13,15,.72);color:#fff;font-family:var(--display);font-weight:600;
+  font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.2rem .55rem;border-radius:20px;backdrop-filter:blur(6px);
+}
+.media-video__chip i{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(225,27,34,.3)}
+@media(max-width:600px){.media-video{width:40%;max-width:150px;right:12px;bottom:12px}}
+
 .split__media .badge{
   position:absolute;left:20px;bottom:20px;background:var(--red);color:#fff;
   padding:.8rem 1.2rem;border-radius:12px;font-family:var(--display);font-weight:700;
