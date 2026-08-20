@@ -115,7 +115,7 @@ img{max-width:100%;display:block}
 .brand{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
 .brand__mark{width:34px;height:34px;flex-shrink:0}
 .brand__word{font-family:var(--display);font-weight:700;font-size:1.7rem;letter-spacing:.02em;color:#fff;line-height:1;display:flex;align-items:center}
-.brand__word b{color:var(--red);font-weight:800}
+.brand__word b{color:#fff;font-weight:800}
 .brand__sub{display:block;font-size:.56rem;letter-spacing:.34em;color:var(--gray);font-weight:600;margin-top:2px}
 
 .nav__links{display:flex;align-items:center;gap:.35rem;margin-left:auto}
