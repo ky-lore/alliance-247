@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Alliance 247 | 24/7 Plumbing, Heating, Air &amp; Electrical — Southern California</title>
-<meta name="description" content="Family-owned since 2010. Same-day plumbing, sewer &amp; drain, water treatment, heating, air conditioning and electrical service across Los Angeles, Orange, San Bernardino &amp; Riverside counties. 24/7 emergency service. Call 800-930-2476.">
+<title>Services | The Alliance 247 — Plumbing, HVAC &amp; Electrical in Southern California</title>
+<meta name="description" content="Explore The Alliance 247's full range of home services: sewer &amp; drain, plumbing, water treatment, heating, air conditioning and electrical — 24/7 across Southern California.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
       <span class="hide-sm">Licensed, bonded, &amp; Insured · CSLB #1119845</span>
     </div>
     <div class="topbar__right">
-      <a href="#areas"><svg width="14" height="14"><use href="#i-pin"/></svg> All of Southern California</a>
+      <a href="contact.html"><svg width="14" height="14"><use href="#i-pin"/></svg> All of Southern California</a>
       <a href="tel:8009302476"><svg width="14" height="14"><use href="#i-phone"/></svg> 800-930-2476</a>
     </div>
   </div>
@@ -52,7 +52,7 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a class="brand" href="/" aria-label="The Alliance 247 home">
+      <a class="brand" href="index.html" aria-label="The Alliance 247 home">
         <svg class="brand__mark" viewBox="0 0 100 100" aria-hidden="true">
           <polygon points="50,14 86,82 14,82" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>
           <polygon points="50,38 72,76 28,76" fill="none" stroke="#fff" stroke-width="7.5" stroke-linejoin="round"/>
@@ -64,10 +64,10 @@
       </a>
 
       <div class="nav__links" id="navLinks">
-        <a href="/">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <div class="has-dd">
-          <a href="services.html">Services</a>
+          <a href="services.html" aria-current="page">Services</a>
           <div class="dd">
             <a href="services/sewer-drain.html"><span class="ic"><svg width="18" height="18"><use href="#i-drain"/></svg></span><span><span class="tt">Sewer &amp; Drain</span><span class="ds">Cleaning · camera · repair</span></span></a>
             <a href="services/plumbing.html"><span class="ic"><svg width="18" height="18"><use href="#i-pipe"/></svg></span><span><span class="tt">Plumbing</span><span class="ds">Leaks · repipes · fixtures</span></span></a>
@@ -81,7 +81,7 @@
         <a href="reviews.html">Reviews</a>
         <a href="careers.html">Careers</a>
         <a href="contact.html">Contact</a>
-        <a class="btn btn--primary nav__cta" href="#book">Book Online</a>
+        <a class="btn btn--primary nav__cta" href="contact.html">Book Online</a>
       </div>
 
       <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
@@ -91,80 +91,19 @@
   </div>
 </header>
 
-<!-- ============== HERO ============== -->
-<section class="hero" id="book">
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
   <div class="container">
-    <div class="hero__inner">
-      <div class="hero__copy reveal">
-        <span class="eyebrow">Family owned &amp; operated since 2010</span>
-        <h1>Southern California's <span class="accent">24/7</span> home service team.</h1>
-        <p class="hero__sub">Plumbing, sewer &amp; drain, water treatment, heating, air conditioning and electrical — done right the first time, with honest pricing and no surprises. Over 40 years of combined experience.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#book"><svg width="18" height="18"><use href="#i-clock"/></svg> Book Same-Day Service</a>
-          <a class="btn btn--ghost" href="tel:8009302476"><svg width="18" height="18"><use href="#i-phone"/></svg> 800-930-2476</a>
-        </div>
-        <div class="hero__trust">
-          <div><b>24/7</b><span>Emergency</span></div>
-          <div><b>40+ yrs</b><span>Combined exp.</span></div>
-          <div><b>4 Counties</b><span>Coverage</span></div>
-          <div><b>Upfront</b><span>Flat pricing</span></div>
-        </div>
-      </div>
-
-      <!-- Booking form -->
-      <div class="hero__card reveal">
-        <h3>Request Service</h3>
-        <p class="muted">Tell us what's going on — we'll call you right back.</p>
-        <form data-placeholder>
-          <div class="field">
-            <label for="h-name">Full name</label>
-            <input id="h-name" name="name" type="text" placeholder="Jane Doe" required>
-          </div>
-          <div class="field">
-            <label for="h-phone">Phone</label>
-            <input id="h-phone" name="phone" type="tel" placeholder="(000) 000-0000" required>
-          </div>
-          <div class="field">
-            <label for="h-service">How can we help?</label>
-            <select id="h-service" name="service" required>
-              <option value="" disabled selected>Select a service…</option>
-              <option>Emergency — need help now</option>
-              <option>Plumbing</option>
-              <option>Sewer &amp; Drain</option>
-              <option>Water Treatment</option>
-              <option>Heating</option>
-              <option>Air Conditioning</option>
-              <option>Electrical</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <button class="btn btn--primary btn--block" type="submit">Request Callback</button>
-          <p class="form-note">By submitting you agree to be contacted about your request. No spam, ever.</p>
-        </form>
-      </div>
-    </div>
+    <div class="breadcrumb"><a href="index.html">Home</a> <i>›</i> <em>Services</em></div>
+    <span class="eyebrow">What we do</span>
+    <h1>One team for your whole home</h1>
+    <p>From a dripping faucet to a full sewer line, a heating breakdown to a panel upgrade — The Alliance 247 handles plumbing, HVAC and electrical under one roof, 24/7 across Southern California.</p>
   </div>
 </section>
 
-<!-- ============== MARQUEE STRIP ============== -->
-<div class="strip" aria-hidden="true">
-  <div class="marquee">
-    <span>Same-Day Service</span><span>Upfront Flat Pricing</span><span>Licensed, Bonded &amp; Insured · CSLB #1119845</span>
-    <span>Free Sewer Camera Inspection</span><span>Senior &amp; Veteran Discounts</span><span>Done Right The First Time</span>
-    <span>Same-Day Service</span><span>Upfront Flat Pricing</span><span>Licensed, Bonded &amp; Insured · CSLB #1119845</span>
-    <span>Free Sewer Camera Inspection</span><span>Senior &amp; Veteran Discounts</span><span>Done Right The First Time</span>
-  </div>
-</div>
-
-<!-- ============== SERVICES ============== -->
-<section class="section" id="services">
+<!-- ============== SERVICES GRID ============== -->
+<section class="section">
   <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">What we do</span>
-      <h2>One team for your whole home</h2>
-      <p class="lead">From a dripping faucet to a full sewer line, heating breakdown or panel upgrade — Alliance handles it all under one roof.</p>
-    </div>
-
     <div class="svc-grid">
       <article class="svc reveal">
         <div class="svc__ic"><svg width="26" height="26"><use href="#i-drain"/></svg></div>
@@ -206,168 +145,17 @@
   </div>
 </section>
 
-<!-- ============== WHY US SPLIT ============== -->
-<section class="section section--tight">
-  <div class="container">
-    <div class="split">
-      <div class="split__media reveal">
-        <img src="img/truck.png" alt="The Alliance 247 branded service truck" loading="lazy">
-        <div class="media-video">
-          <video src="img/van-drive.mp4" poster="img/van-drive-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="An Alliance 247 service van on the way to a Southern California call"></video>
-          <span class="media-video__chip"><i></i> On the way</span>
-        </div>
-        <div class="badge"><b>2010</b><span>Family owned</span></div>
-      </div>
-      <div class="reveal">
-        <span class="eyebrow">The Alliance difference</span>
-        <h2>Neighbors you can actually count on</h2>
-        <p class="lead">We built Alliance on doing the job right and treating every home like our own. No pushy upsells, no mystery invoices — just skilled techs and pricing you approve before we start.</p>
-        <ul class="checklist">
-          <li><span class="ck"><svg width="14" height="14"><use href="#i-check"/></svg></span><span><b>Same-day service</b><p>Fast response when you need it most — 24/7 emergency line always open.</p></span></li>
-          <li><span class="ck"><svg width="14" height="14"><use href="#i-check"/></svg></span><span><b>Upfront, accurate pricing</b><p>You see the price before we begin. No surprises when the work is done.</p></span></li>
-          <li><span class="ck"><svg width="14" height="14"><use href="#i-check"/></svg></span><span><b>Solved the first time</b><p>40+ years combined experience across plumbing, HVAC and electrical.</p></span></li>
-          <li><span class="ck"><svg width="14" height="14"><use href="#i-check"/></svg></span><span><b>Licensed, bonded &amp; insured</b><p>Fully licensed, bonded &amp; multi-trade contractor — CSLB&nbsp;#1119845.</p></span></li>
-        </ul>
-        <a class="btn btn--ghost" href="about.html" style="margin-top:1.6rem">Our story <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== OFFERS ============== -->
-<section class="section offers">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Current specials</span>
-      <h2>Save on your next visit</h2>
-      <p class="lead">Mention these offers when you book. Cannot be combined; some restrictions apply.</p>
-    </div>
-    <div class="offer-grid">
-      <div class="offer reveal">
-        <span class="tag">Free</span>
-        <b>$0</b>
-        <p>Sewer Camera Inspection</p>
-        <small>With any drain service call</small>
-      </div>
-      <div class="offer reveal">
-        <span class="tag">Special</span>
-        <b>$79</b>
-        <p>Water Heater Service</p>
-        <small>Tanks up to 50 gallons</small>
-      </div>
-      <div class="offer reveal">
-        <span class="tag">Special</span>
-        <b>$150</b>
-        <p>Tankless Flush &amp; Service</p>
-        <small>Extend your unit's lifespan</small>
-      </div>
-      <div class="offer reveal">
-        <span class="tag">Always</span>
-        <b>Free</b>
-        <p>Estimates on New Installs</p>
-        <small>+ Senior &amp; Veteran discounts</small>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============== PROCESS ============== -->
-<section class="section">
+<section class="section section--tight offers">
   <div class="container">
     <div class="center reveal">
       <span class="eyebrow">How it works</span>
       <h2>Service in three simple steps</h2>
     </div>
     <div class="steps">
-      <div class="step reveal">
-        <h3>Book in minutes</h3>
-        <p>Call or request service online. Tell us what's wrong and we'll schedule a time that works — including same day.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Upfront diagnosis</h3>
-        <p>A licensed tech inspects the issue and gives you a clear, flat price to approve before any work begins.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Done right</h3>
-        <p>We fix it the first time, clean up after ourselves, and stand behind every job we do.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== SERVICE AREAS ============== -->
-<section class="section areas" id="areas">
-  <div class="container">
-    <div class="split" style="align-items:center">
-      <div class="reveal">
-        <span class="eyebrow">Where we work</span>
-        <h2>Proudly serving Southern California</h2>
-        <p class="lead">Based in Fontana and focused on Los Angeles, Orange, San Bernardino and Riverside counties — with coverage available from Ventura all the way to San Diego.</p>
-        <div class="area-cloud">
-          <span>Fontana</span><span>Rancho Cucamonga</span><span>Ontario</span><span>Riverside</span>
-          <span>San Bernardino</span><span>Corona</span><span>Chino</span><span>Anaheim</span>
-          <span>Irvine</span><span>Los Angeles</span><span>Pomona</span><span>Rialto</span>
-          <span>Moreno Valley</span><span>Fontana &amp; beyond</span>
-        </div>
-        <a class="btn btn--ghost" href="tel:8009302476" style="margin-top:1.8rem"><svg width="18" height="18"><use href="#i-phone"/></svg> Check my area</a>
-      </div>
-      <div class="map-card reveal">
-        <div class="map-chip"><i></i> Coverage Area</div>
-        <svg viewBox="0 0 640 520" role="img" aria-label="Map of The Alliance 247 service area across Southern California">
-          <!-- extended coverage ring (Ventura → San Diego) -->
-          <ellipse class="map-ext" cx="330" cy="278" rx="300" ry="228"/>
-          <!-- counties -->
-          <path class="map-county" d="M55,168 L245,126 L292,208 L250,282 L150,300 L68,234 Z"/>
-          <path class="map-county" d="M258,122 L560,96 L604,254 L360,288 L302,206 Z"/>
-          <path class="map-county" d="M312,302 L366,294 L606,264 L610,440 L362,444 L322,362 Z"/>
-          <path class="map-county" d="M250,294 L300,302 L298,358 L236,404 L178,354 Z"/>
-          <!-- county labels -->
-          <text class="map-label--sm map-label" x="150" y="212" text-anchor="middle">Los Angeles</text>
-          <text class="map-label" x="432" y="188" text-anchor="middle">San Bernardino</text>
-          <text class="map-label" x="470" y="366" text-anchor="middle">Riverside</text>
-          <text class="map-label--sm map-label" x="248" y="352" text-anchor="middle">Orange</text>
-          <!-- ocean + coastline detail -->
-          <text class="map-ocean" x="60" y="430" transform="rotate(-34 60 430)">Pacific Ocean</text>
-          <path class="map-wave" d="M40,300 q14,-10 28,0 t28,0"/>
-          <path class="map-wave" d="M56,332 q14,-10 28,0 t28,0"/>
-          <!-- Fontana pin -->
-          <circle class="pulse" cx="300" cy="228" r="9"/>
-          <path class="map-pin" d="M300,206 c-11,0 -19,8 -19,19 c0,13 19,31 19,31 c0,0 19,-18 19,-31 c0,-11 -8,-19 -19,-19 Z"/>
-          <circle class="map-pin-dot" cx="300" cy="225" r="6"/>
-          <text class="map-pinlabel" x="300" y="284" text-anchor="middle">Fontana · HQ</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== REVIEWS ============== -->
-<section class="section">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Rated by neighbors</span>
-      <h2>What homeowners say</h2>
-      <p class="lead">Real families across Southern California trust Alliance for their homes.</p>
-    </div>
-    <div class="rev-grid">
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>"They came out same day for a sewer backup and had a camera down the line within an hour. Honest pricing, no upsell — exactly what they promised."</p>
-        <div class="who"><span class="av">M</span><span><b>Maria G.</b><small>Fontana, CA</small></span></div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Our AC died in a July heat wave. Alliance had a tech out that afternoon and a new system running the next day. Professional from start to finish."</p>
-        <div class="who"><span class="av">D</span><span><b>David R.</b><small>Riverside, CA</small></span></div>
-      </div>
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Whole-house repipe done clean and on schedule. They walked me through the price up front and there were zero surprises. Highly recommend."</p>
-        <div class="who"><span class="av">S</span><span><b>Sandra L.</b><small>Rancho Cucamonga, CA</small></span></div>
-      </div>
-    </div>
-    <div class="center" style="margin-top:2.4rem">
-      <a class="btn btn--ghost reveal" href="reviews.html">Read more reviews <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <div class="step reveal"><h3>Book in minutes</h3><p>Call or request service online. Tell us what's wrong and we'll schedule a time that works — including same day.</p></div>
+      <div class="step reveal"><h3>Upfront diagnosis</h3><p>A licensed tech inspects the issue and gives you a clear, flat price to approve before any work begins.</p></div>
+      <div class="step reveal"><h3>Done right</h3><p>We fix it the first time, clean up after ourselves, and stand behind every job we do.</p></div>
     </div>
   </div>
 </section>
@@ -375,10 +163,10 @@
 <!-- ============== CTA BANNER ============== -->
 <section class="cta-banner">
   <div class="container">
-    <h2>Got a sewer, plumbing, HVAC, or electrical emergency?</h2>
-    <p>Our team is standing by 24 hours a day, 7 days a week. Call now or request service and we'll be on the way.</p>
+    <h2>Not sure which service you need?</h2>
+    <p>Tell us what's going on and our team will point you in the right direction — 24 hours a day, 7 days a week.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:.6rem">
-      <a class="btn btn--primary" href="#book">Book Service Online</a>
+      <a class="btn btn--primary" href="contact.html">Book Service Online</a>
       <a class="btn btn--ghost" href="tel:8009302476">Call 24/7</a>
     </div>
     <a class="cta-phone" href="tel:8009302476">800-930-2476</a>
@@ -390,7 +178,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="/">
+        <a class="brand" href="index.html">
           <svg class="brand__mark" viewBox="0 0 100 100" aria-hidden="true">
             <polygon points="50,14 86,82 14,82" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>
             <polygon points="50,38 72,76 28,76" fill="none" stroke="#fff" stroke-width="7.5" stroke-linejoin="round"/>
