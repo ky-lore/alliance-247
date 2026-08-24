@@ -300,6 +300,23 @@ img{max-width:100%;display:block}
   box-shadow:var(--shadow);overflow:hidden;
 }
 .map-card svg{width:100%;height:auto;display:block}
+.map-card--embed{padding:0}
+.map-card--embed iframe{border-radius:18px;filter:grayscale(.25) contrast(1.05)}
+
+/* --- Coming soon --- */
+.coming-soon{
+  max-width:640px;margin:0 auto;text-align:center;
+  background:radial-gradient(120% 120% at 80% 0%,#171a1f,#0e1013);
+  border:1px solid var(--line);border-radius:20px;
+  padding:clamp(2.4rem,5vw,4rem) 2rem;box-shadow:var(--shadow);
+}
+.coming-soon__ic{
+  width:64px;height:64px;margin:0 auto 1.4rem;display:grid;place-items:center;
+  border-radius:16px;background:rgba(225,27,34,.12);border:1px solid rgba(225,27,34,.4);color:var(--red);
+}
+.coming-soon h2{margin:0 0 .6rem}
+.coming-soon p{color:var(--gray);max-width:46ch;margin:0 auto 1.8rem}
+.coming-soon .btn{margin:.3rem}
 .map-county{fill:rgba(225,27,34,.13);stroke:rgba(225,27,34,.6);stroke-width:1.6;transition:.3s}
 .map-card:hover .map-county{fill:rgba(225,27,34,.22)}
 .map-label{fill:#eceef1;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
