@@ -2,22 +2,51 @@
 (function () {
   'use strict';
 
-  // Mobile nav toggle
+  // Mobile nav
   var toggle = document.querySelector('.nav__toggle');
   var links = document.querySelector('.nav__links');
+  var header = document.querySelector('.site-header');
+  var isMobileNav = function () { return window.matchMedia('(max-width:900px)').matches; };
+
+  function setNav(open) {
+    links.classList.toggle('open', open);
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('nav-open', open);
+    if (!open) {
+      // reset the accordions so the drawer always reopens compact
+      links.querySelectorAll('.has-dd.open').forEach(function (dd) { dd.classList.remove('open'); });
+    }
+  }
+
   if (toggle && links) {
-    toggle.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
-      toggle.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setNav(!links.classList.contains('open'));
     });
-    // close on nav link click (mobile), but not when opening a dropdown parent
+
     links.addEventListener('click', function (e) {
       var a = e.target.closest('a');
-      if (a && !a.closest('.has-dd') && links.classList.contains('open')) {
-        links.classList.remove('open');
-        toggle.classList.remove('is-open');
+      if (!a) return;
+      var parent = a.parentElement;
+      // tapping "Services" opens the accordion instead of navigating
+      if (isMobileNav() && parent && parent.classList.contains('has-dd')) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+        return;
       }
+      if (links.classList.contains('open')) setNav(false);
+    });
+
+    // tap outside / Escape closes it
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && header && !header.contains(e.target)) setNav(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('open')) { setNav(false); toggle.focus(); }
+    });
+    window.addEventListener('resize', function () {
+      if (!isMobileNav() && links.classList.contains('open')) setNav(false);
     });
   }
 
