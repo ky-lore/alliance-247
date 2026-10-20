@@ -5,6 +5,9 @@
   // Lead form endpoint: GoHighLevel inbound webhook (posted directly from the browser).
   var LEAD_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/aDPYDpN4kvtifRTOby7i/webhook-trigger/358552dd-add6-4a2e-a8a9-e9bc08dd6c74';
 
+  // After a successful submit, send the visitor to their trade's thank-you page.
+  var THANK_YOU = { Plumbing: '/thank-you-plumbing/', Electrical: '/thank-you-electrical/' };
+
   var COUNTIES = {
     'los-angeles': 'Los Angeles County',
     'orange': 'Orange County',
@@ -102,9 +105,18 @@
         body: JSON.stringify(data)
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
+        var thanks = THANK_YOU[data.trade];
+        var done = false;
+        function next() {
+          if (done) return;
+          done = true;
+          if (thanks) window.location.href = thanks;
+          else if (card) card.classList.add('is-sent');
+        }
+        // Let GTM fire its generate_lead tags before leaving the page, but never wait more than 1s.
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'generate_lead', lead_service: data.service || '', lead_page: data.page || '' });
-        if (card) card.classList.add('is-sent');
+        window.dataLayer.push({ event: 'generate_lead', lead_service: data.service || '', lead_page: data.page || '', lead_trade: data.trade || '', eventCallback: next, eventTimeout: 1000 });
+        setTimeout(next, 1200);
       }).catch(fail);
     });
   });

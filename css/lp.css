@@ -106,3 +106,12 @@
 /* no orphans: balanced headings, last-line protection on body copy */
 h1,h2,h3,.cta-banner h2{text-wrap:balance}
 p,.lead,.hero__sub,li,summary{text-wrap:pretty}
+
+/* Thank-you pages */
+.ty-hero::after{opacity:.18}
+.ty{max-width:760px;margin:0 auto;padding:96px 0 104px;text-align:center}
+.ty .hero__sub{margin-left:auto;margin-right:auto}
+.ty .hero__cta{justify-content:center}
+.ty__ck{width:76px;height:76px;margin:0 auto 1.4rem;border-radius:50%;display:grid;place-items:center;background:rgba(225,27,34,.15);border:1px solid rgba(225,27,34,.4);color:var(--red)}
+.ty__urgent{color:var(--gray-2);margin:1.4rem 0 1rem;font-weight:600}
+@media (max-width:640px){.ty{padding:64px 0 72px}}
