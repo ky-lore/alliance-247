@@ -34,6 +34,7 @@
 .form-success p{color:var(--gray-2);font-size:.95rem}
 .hero__card.is-sent form{display:none}
 .hero__card.is-sent .form-success{display:block}
+.form-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form-error{display:none;color:#ff8a8f;font-size:.85rem;margin:.6rem 0 0;text-align:center}
 .form-error.show{display:block}
 

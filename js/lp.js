@@ -2,9 +2,8 @@
 (function () {
   'use strict';
 
-  // Lead form endpoint (GoHighLevel inbound webhook, Zapier, etc.).
-  // Leave empty until wired up: the form will show an error instead of pretending to send.
-  var LEAD_WEBHOOK_URL = '';
+  // Lead form endpoint: GoHighLevel inbound webhook (posted directly from the browser).
+  var LEAD_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/aDPYDpN4kvtifRTOby7i/webhook-trigger/358552dd-add6-4a2e-a8a9-e9bc08dd6c74';
 
   var COUNTIES = {
     'los-angeles': 'Los Angeles County',
@@ -43,17 +42,41 @@
   }
 
   // Lead forms: attach tracking fields, post to webhook
+  function toE164(raw) {
+    var d = String(raw || '').replace(/\D/g, '');
+    if (d.length === 10) return '+1' + d;
+    if (d.length === 11 && d[0] === '1') return '+' + d;
+    return String(raw || '').trim();
+  }
+
   var TRACK = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid'];
   document.querySelectorAll('form.lead-form').forEach(function (form) {
     var card = form.closest('.hero__card');
     var err = form.querySelector('.form-error');
+    var busy = false;
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (busy) return;
       if (err) err.classList.remove('show');
 
+      // Honeypot: humans never see this field, bots fill it. Pretend success, send nothing.
+      var hp = form.querySelector('input[name="website"]');
+      if (hp && hp.value.trim()) { if (card) card.classList.add('is-sent'); return; }
+
       var data = {};
-      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      new FormData(form).forEach(function (v, k) {
+        if (k === 'website') return;
+        data[k] = typeof v === 'string' ? v.trim() : v;
+      });
+      var parts = (data.name || '').split(/\s+/).filter(Boolean);
+      data.full_name = data.name || '';
+      data.first_name = parts.shift() || '';
+      data.last_name = parts.join(' ');
+      data.phone = toE164(data.phone);
+      data.source = 'Website';
+      data.form_source = 'Landing Page: ' + (data.page || '');
+      data.page_url = window.location.href.split('#')[0];
       TRACK.forEach(function (k) { if (params.get(k)) data[k] = params.get(k); });
       data.area = area || '';
       data.landing_page = window.location.origin + window.location.pathname;
@@ -64,16 +87,18 @@
       var original = btn ? btn.textContent : '';
 
       function fail() {
+        busy = false;
         if (btn) { btn.textContent = original; btn.disabled = false; }
         if (err) err.classList.add('show');
       }
 
       if (!LEAD_WEBHOOK_URL) { console.warn('[lp] LEAD_WEBHOOK_URL is not set: lead not sent', data); fail(); return; }
 
+      busy = true;
       if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
       fetch(LEAD_WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
