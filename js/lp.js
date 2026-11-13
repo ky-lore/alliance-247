@@ -77,6 +77,7 @@
       data.first_name = parts.shift() || '';
       data.last_name = parts.join(' ');
       data.phone = toE164(data.phone);
+      data.email = (data.email || '').toLowerCase();
       data.source = 'Website';
       data.form_source = 'Landing Page: ' + (data.page || '');
       data.page_url = window.location.href.split('#')[0];
